@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
             return void M.reply(`I'm not an admin of this group.`)
         if ((await this.client.getGroupData(M.from)).invitelink) {
             const code = await this.client.groupInviteCode(M.from).catch(() => {
-                return void M.reply('Could not get the invite link')
+                return void M.reply('Could not get the invite link talk to my owner')
             })
             await this.client.sendMessage(
                 M.sender.jid,
